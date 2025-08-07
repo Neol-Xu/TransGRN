@@ -39,7 +39,7 @@ def main():
         print("######################")
         print("With Pre-training")
         print("######################")
-        checkpoint_path = f'check_point_all/{network}/{target_cell_line}_{num}/sample1/model_weights.pth'
+        checkpoint_path = f'check_point/{network}/{target_cell_line}_{num}/sample1/model_weights.pth'
         if os.path.exists(checkpoint_path):
             checkpoint = torch.load(checkpoint_path)
             model.load_state_dict(checkpoint['model_state_dict'])
