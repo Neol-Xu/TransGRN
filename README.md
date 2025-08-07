@@ -1,11 +1,9 @@
 # TransGRN: a transfer learning-based method for inferring gene regulatory networks across cell lines
 ![image](https://github.com/Neol-Xu/TransGRN/blob/master/figure/Flowchat.png)
 # Dependencies Used in This Project
-- Python  3.8.20
-- PyTorch: 1.11.0
-- torch-scatter==2.0.9
-- torch-sparse==0.6.14
-- torch-geometric
+- Python  3.8.0
+- PyTorch 1.12.1
+- cuda 11.3
 # Usage
 ## 1. Generate gene description embeddings  
 Run the python scripts in the `data_generate` folder sequentially to collect the required gene function description summaries from the NCBI database, and then use the GPT-3.5 model API to convert the collected text information into gene description embeddings.
