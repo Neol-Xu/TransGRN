@@ -1,4 +1,4 @@
-name: SEAL
+name: TransGRN
 channels:
   - pytorch
   - https://mirrors.aliyun.com/anaconda/pkgs/free/
