@@ -13,8 +13,8 @@ Run the Python scripts in the `data_split` folder for data splitting sequentiall
 python data_split/Source_data.py
 python data_split/benchmark_data.py
 python data_split/Few_shot_data.py
-python data_split/cold_cold_start_source_data.py
 python data_split/cold_start_data.py
+python data_split/cold_cold_start_source_data.py
 ```
 ## 3. Run Inference
 Setup the required environment using the provided `requirements.txt` file:
