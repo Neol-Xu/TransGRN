@@ -76,10 +76,10 @@ class CAN(nn.Module):
         alpha_gf = self.alpha_logits(logits_gf, mask_target, mask_tf)
 
         fg_out = torch.einsum('blkh, bkhd->blhd', alpha_fg, v_target).flatten(-2)
-        fg_out = self.norm_fg(tf_orig + self.dropout(fg_out))
+        fg_out = self.norm_fg(target_orig + self.dropout(fg_out))
         
         gf_out = torch.einsum('blkh, bkhd->blhd', alpha_gf, v_tf).flatten(-2)
-        gf_out = self.norm_gf(target_orig + self.dropout(gf_out))
+        gf_out = self.norm_gf(tf_orig + self.dropout(gf_out))
 
         tf_embedding = fg_out
         target_embedding = gf_out
