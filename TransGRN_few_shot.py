@@ -29,7 +29,7 @@ def main():
     target_cell_line = args.target_cell_line
     source_cell_lines = args.source_cell_lines.split(",")
 
-    checkpoint_path = f'check_point_all/{network}/{target_cell_line}_{num}/{sample}/model_weights.pth'
+    checkpoint_path = f'check_point/{network}/{target_cell_line}_{num}/sample1/model_weights.pth'
     os.makedirs(os.path.dirname(checkpoint_path), exist_ok=True)
 
     model = TransGRN().cuda()
