@@ -14,9 +14,7 @@ sub_sub_dirs = ['TFs+1000', 'TFs+500']
 species_gene_summary_human = set()
 species_gene_summary_mouse = set()
 
-# 遍历所有基目录
 for base_dir in base_dirs:
-    # 遍历所有子目录和子子目录
     for sub_dir in sub_dirs:
         sub_dir_path = os.path.join(base_dir, sub_dir)
         if os.path.isdir(sub_dir_path):
