@@ -7,6 +7,8 @@
 - torch-sparse==0.6.14
 - torch-geometric
 # Usage
+## 1. Generate gene description embeddings  
+### 
 Setup the required environment using the provided `requirements.txt` file:
 ```bash
 pip install -r requirements.txt
