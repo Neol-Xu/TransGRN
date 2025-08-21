@@ -15,11 +15,11 @@ def negative_sampling(positive_edges, all_TFs, candidate_targets, sample_num):
             neg_edges.add((tf, target))
     return list(neg_edges)
 
-test_base_dir = "/data/cold_start/STRING"
-gt_base_dir = "/data/Expression/STRING"
+test_base_dir = "cold_start/STRING"
+gt_base_dir = "demo_data/Expression/STRING"
 
 cell_lines = ["hESC", "hHEP", "mDC", "mHSC-E", "mESC", "mHSC-GM", "mHSC-L"]
-samples = ["sample1", "sample2", "sample3", "sample4", "sample5"]
+samples = ["sample1"]
 tf_nums = [1000]
 
 for tf_num in tf_nums:
@@ -30,7 +30,7 @@ for tf_num in tf_nums:
             test_set_path = os.path.join(test_base_dir, f"{target_cl}_{tf_num}", sample, "Test_set.csv")
             test_df = pd.read_csv(test_set_path)
 
-            target_path = f"/data/Expression/STRING/{target_cl}/TFs+{tf_num}/Target.csv"
+            target_path = f"demo_data/Expression/STRING/{target_cl}/TFs+{tf_num}/Target.csv"
             index2gene_target, _ = load_target_index_map(target_path)
 
             test_df['TF'] = test_df['TF'].map(index2gene_target)
@@ -54,7 +54,7 @@ for tf_num in tf_nums:
                 positive_edges = set(zip(filtered_gt_df['Gene1'], filtered_gt_df['Gene2']))
                 sample_num = len(positive_edges)
 
-                source_path = f"/data/Expression/STRING/{source_cl}/TFs+{tf_num}/Target.csv"
+                source_path = f"demo_data/Expression/STRING/{source_cl}/TFs+{tf_num}/Target.csv"
                 df = pd.read_csv(source_path)
                 candidate_targets = set(df['Gene'].unique())
                 candidate_targets = candidate_targets - excluded_genes
@@ -72,6 +72,6 @@ for tf_num in tf_nums:
                 train_df['TF'] = train_df['TF'].map(gene2index_source)
                 train_df['Target'] = train_df['Target'].map(gene2index_source)
 
-                save_dir = f"/data/cold_start_pretrain/{target_cl}/TFs_{tf_num}/{sample}/{source_cl}"
+                save_dir = f"cold_start_pretrain/{target_cl}/TFs_{tf_num}/{sample}/{source_cl}"
                 os.makedirs(save_dir, exist_ok=True)
                 train_df.to_csv(os.path.join(save_dir, "Train_set.csv"))

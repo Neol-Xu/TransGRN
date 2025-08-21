@@ -27,7 +27,7 @@ def train_set(label_file, Gene_file, TF_file, train_set_file):
     train.to_csv(train_set_file)
 
 def generate_source_data():
-    root_dir = r'D:\bioML\TransGRN\dataset'
+    root_dir = os.getcwd()
 
     nets = ['Specific', 'Non-Specific', 'STRING']
     nums = ['500', '1000']
@@ -57,7 +57,7 @@ def generate_source_data():
 
 # Function to check for duplicates and create New_Source dataset
 def check_and_create_new_source():
-    root_dir = r'D:\bioML\TransGRN\dataset'
+    root_dir = os.getcwd()
 
     nets = ['Specific', 'Non-Specific', 'STRING']
     nums = ['500', '1000']
@@ -68,7 +68,7 @@ def check_and_create_new_source():
         for num in nums:
             for target_cell in cell_lines:
                 expr_t = os.path.join(
-                    root_dir, 'Expression', net, target_cell, f'TFs+{num}', 'Target.csv'
+                    root_dir, 'demo_data/Expression', net, target_cell, f'TFs+{num}', 'Target.csv'
                 )
                 if not os.path.exists(expr_t):
                     continue
@@ -91,7 +91,7 @@ def check_and_create_new_source():
 
                 for source_cell in [cl for cl in cell_lines if cl != target_cell]:
                     expr_s = os.path.join(
-                        root_dir, 'Expression', net, source_cell, f'TFs+{num}', 'Target.csv'
+                        root_dir, 'demo_data/Expression', net, source_cell, f'TFs+{num}', 'Target.csv'
                     )
                     df_map_s = pd.read_csv(expr_s)
                     idx2gene_s = dict(zip(df_map_s['index'].astype(int), df_map_s['Gene'].astype(str)))
@@ -131,5 +131,5 @@ def check_and_create_new_source():
 
 # Run the process
 if __name__ == '__main__':
-    generate_source_data()  # First generate the single source dataset
+    # generate_source_data()  # First generate the single source dataset
     check_and_create_new_source()  # Then check and generate the New_Source dataset
