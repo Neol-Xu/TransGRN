@@ -57,7 +57,7 @@ def generate_source_data():
 
 # Function to check for duplicates and create New_Source dataset
 def check_and_create_new_source():
-    root_dir = r'D:\bioML\TransGRN\数据集'
+    root_dir = r'D:\bioML\TransGRN\dataset'
 
     nets = ['Specific', 'Non-Specific', 'STRING']
     nums = ['500', '1000']
