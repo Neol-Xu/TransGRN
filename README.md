@@ -16,5 +16,11 @@ python data_split/Source_data.py
 python data_split/cold_start_data.py
 python data_split/cold_start_source_data.py
 ```
+## Gene regulatory networks inference
+Run the model to infer gene regulatory networks by following commands.
+```shell
+bash script\benchmark.sh
+bash script\Fewshot.sh
+```
 # Contact
 For any inquiries, feel free to raise issues or contact me via email at xuge88437@gmail.com
