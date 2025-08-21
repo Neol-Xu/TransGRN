@@ -287,9 +287,9 @@ if __name__ == '__main__':
             for data_type in data_types:
 
                 base_dir = os.getcwd()
-                TF2file = os.path.join(base_dir, net_type, data_type, f'TFs+{num}', 'TF.csv')
-                Gene2file = os.path.join(base_dir, net_type, data_type, f'TFs+{num}', 'Target.csv')
-                label_file = os.path.join(base_dir, net_type, data_type, f'TFs+{num}', 'Label.csv')
+                TF2file = os.path.join(base_dir, "demo_data\Expression", net_type, data_type, f'TFs+{num}', 'TF.csv')
+                Gene2file = os.path.join(base_dir, "demo_data\Expression", net_type, data_type, f'TFs+{num}', 'Target.csv')
+                label_file = os.path.join(base_dir, "demo_data\Expression", net_type, data_type, f'TFs+{num}', 'Label.csv')
 
                 density = Network_Statistic(data_type=data_type, net_scale=num, net_type=net_type)
                 
