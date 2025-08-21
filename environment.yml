@@ -1,4 +1,4 @@
-name: SEAL
+name: TransGRN
 channels:
   - pytorch
   - https://mirrors.aliyun.com/anaconda/pkgs/free/
@@ -140,4 +140,4 @@ dependencies:
       - wrapt==1.16.0
       - yarl==1.15.2
       - zipp==3.20.2
-prefix: /home/yuweiming/anaconda3/envs/SEAL
+prefix: /home/yuweiming/anaconda3/envs/TransGRN
