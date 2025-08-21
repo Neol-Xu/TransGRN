@@ -7,5 +7,14 @@ Before running any scripts, set up the required environment using the provided e
 ```shell
 conda env create -f environment.yml
 ```
+## 2. Data generation
+Execute the Python files in the `data_generate` folder in sequence to obtain gene description embeddings. Subsequently, run the following commands in order to split the dataset.
+```shell
+python data_split/benchmark_data.py
+python data_split/Few_shot_data.py
+python data_split/Source_data.py
+python data_split/cold_start_data.py
+python data_split/cold_start_source_data.py
+```
 # Contact
 For any inquiries, feel free to raise issues or contact me via email at xuge88437@gmail.com
