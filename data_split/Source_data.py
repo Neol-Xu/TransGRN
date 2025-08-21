@@ -27,7 +27,7 @@ def train_set(label_file, Gene_file, TF_file, train_set_file):
     train.to_csv(train_set_file)
 
 def generate_source_data():
-    root_dir = r'D:\bioML\TransGRN\数据集'
+    root_dir = r'D:\bioML\TransGRN\dataset'
 
     nets = ['Specific', 'Non-Specific', 'STRING']
     nums = ['500', '1000']
