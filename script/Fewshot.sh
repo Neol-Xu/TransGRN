@@ -3,7 +3,7 @@ dataset_types=("Specific")
 tf_counts=("1000")
 samples=("sample1")
 
-source_celltypes=("hHEP" "mDC" "mESC" "mHSC-E" "mHSC-GM" "mHSC-L")
+source_celltypes=("mDC" "mESC" "mHSC-E" "mHSC-GM" "mHSC-L")
 target_celltype="hESC"
 
 for dataset_type in "${dataset_types[@]}"; do
