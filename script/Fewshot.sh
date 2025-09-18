@@ -1,5 +1,5 @@
 #!/bin/bash
-dataset_types=("Specific")
+dataset_types=("STRING")
 tf_counts=("1000")
 samples=("sample1")
 
