@@ -131,5 +131,5 @@ def check_and_create_new_source():
 
 # Run the process
 if __name__ == '__main__':
-    # generate_source_data()  # First generate the single source dataset
+    generate_source_data()  # First generate the single source dataset
     check_and_create_new_source()  # Then check and generate the New_Source dataset

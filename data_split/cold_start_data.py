@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import os
 import random
 from collections import defaultdict
@@ -245,7 +244,6 @@ if __name__ == '__main__':
     net_types = ["STRING"]
     nums = [1000]
 
-    # 可调的全局参数
     RATIOS = (0.6, 0.2, 0.2)  
     NEG_POS_RATIO = 1.0       
     K_LAYER = 3  # Number of TF layers (K for quantile_stratified_split)
